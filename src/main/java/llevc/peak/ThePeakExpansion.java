@@ -19,6 +19,9 @@ public class ThePeakExpansion implements ModInitializer {
 		// However, some things (like resources) may still be uninitialized.
 		// Proceed with mild caution.
 
+		ModBlocks.initialize();
+		ModItems.initialize();
+
 		LOGGER.info("Hello Fabric world!");
 	}
 }

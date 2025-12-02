@@ -35,6 +35,7 @@ public class ModItems {
         // Register items to the custom item group.
         ItemGroupEvents.modifyEntriesEvent(ItemGroupKey).register(itemGroup -> {
             itemGroup.add(TestItem);
+            itemGroup.add(ModBlocks.TestBlock.asItem());
         });
     }
 
