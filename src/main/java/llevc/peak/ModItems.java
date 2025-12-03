@@ -1,11 +1,9 @@
 package llevc.peak;
 
+import llevc.peak.forging.weaponTypes.ModularSword;
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
-import net.minecraft.item.Item;
-import net.minecraft.item.ItemGroup;
-import net.minecraft.item.ItemStack;
-import net.minecraft.item.Items;
+import net.minecraft.item.*;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.registry.RegistryKey;
@@ -36,6 +34,10 @@ public class ModItems {
         ItemGroupEvents.modifyEntriesEvent(ItemGroupKey).register(itemGroup -> {
             itemGroup.add(TestItem);
             itemGroup.add(ModBlocks.TestBlock.asItem());
+            itemGroup.add(ModBlocks.ForgingTable.asItem());
+            itemGroup.add(ModBlocks.LightAnvil.asItem());
+            itemGroup.add(ModBlocks.ReinforcedAnvil.asItem());
+            itemGroup.add(ModBlocks.DiamondAnvil.asItem());
         });
     }
 
@@ -43,6 +45,13 @@ public class ModItems {
             "test",
             Item::new,
             new Item.Settings()
+    );
+
+    //template
+    public static final Item ModularSwordItem = register(
+            "modular_sword",
+            ModularSword::new,
+            new Item.Settings().sword(ToolMaterial.WOOD,3f,-2.4f)
     );
 
     //the item group lol

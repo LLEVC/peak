@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=east": {
+      "model": "peak:block/diamond_anvil",
+      "y": 270
+    },
+    "facing=north": {
+      "model": "peak:block/diamond_anvil",
+      "y": 180
+    },
+    "facing=south": {
+      "model": "peak:block/diamond_anvil"
+    },
+    "facing=west": {
+      "model": "peak:block/diamond_anvil",
+      "y": 90
+    }
+  }
+}

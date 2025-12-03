@@ -1,14 +1,16 @@
 {
-	"required": true,
-	"package": "llevc.peak.mixin",
-	"compatibilityLevel": "JAVA_21",
-	"mixins": [
-		"ExampleMixin"
-	],
-	"injectors": {
-		"defaultRequire": 1
-	},
-	"overwrites": {
-		"requireAnnotations": true
-	}
+  "required": true,
+  "package": "llevc.peak.mixin",
+  "compatibilityLevel": "JAVA_21",
+  "mixins": [
+    "AnvilStuffMixin",
+    "AnvilTooltipMixin",
+    "StuddedTooltipMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  },
+  "overwrites": {
+    "requireAnnotations": true
+  }
 }

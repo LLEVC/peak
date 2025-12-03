@@ -1,7 +1,9 @@
 package llevc.peak;
 
-import net.minecraft.block.AbstractBlock;
-import net.minecraft.block.Block;
+import llevc.peak.forging.ForgingTableBlock;
+import net.minecraft.block.*;
+import net.minecraft.block.enums.NoteBlockInstrument;
+import net.minecraft.block.piston.PistonBehavior;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.registry.Registries;
@@ -48,7 +50,56 @@ public class ModBlocks {
     public static final Block TestBlock = register(
             "test_block",
             Block::new,
-            AbstractBlock.Settings.create().sounds(BlockSoundGroup.GRASS),
+            AbstractBlock.Settings.create()
+                    .sounds(BlockSoundGroup.GRASS),
+            true
+    );
+
+    public static final Block ForgingTable = register(
+            "forging_table",
+            ForgingTableBlock::new,
+            AbstractBlock.Settings.create()
+                    .mapColor(MapColor.STONE_GRAY)
+                    .instrument(NoteBlockInstrument.BASS)
+                    .strength(2.5F)
+                    .sounds(BlockSoundGroup.WOOD)
+                    .burnable(),
+            true
+    );
+
+    public static final Block ReinforcedAnvil = register(
+            "reinforced_anvil",
+            AnvilBlock::new,
+            AbstractBlock.Settings.create()
+                    .mapColor(MapColor.IRON_GRAY)
+                    .requiresTool()
+                    .strength(5.0F, 1200.0F)
+                    .sounds(BlockSoundGroup.ANVIL)
+                    .pistonBehavior(PistonBehavior.BLOCK),
+            true
+    );
+
+    public static final Block DiamondAnvil = register(
+            "diamond_anvil",
+            AnvilBlock::new,
+            AbstractBlock.Settings.create()
+                    .mapColor(MapColor.IRON_GRAY)
+                    .requiresTool()
+                    .strength(5.0F, 1200.0F)
+                    .sounds(BlockSoundGroup.ANVIL)
+                    .pistonBehavior(PistonBehavior.BLOCK),
+            true
+    );
+
+    public static final Block LightAnvil = register(
+            "light_anvil",
+            AnvilBlock::new,
+            AbstractBlock.Settings.create()
+                    .mapColor(MapColor.IRON_GRAY)
+                    .requiresTool()
+                    .strength(1.25f, 300f)
+                    .sounds(BlockSoundGroup.ANVIL)
+                    .pistonBehavior(PistonBehavior.NORMAL),
             true
     );
 }

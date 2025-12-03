@@ -19,6 +19,7 @@ public class ThePeakExpansion implements ModInitializer {
 		// However, some things (like resources) may still be uninitialized.
 		// Proceed with mild caution.
 
+		ModComponents.initialize();
 		ModBlocks.initialize();
 		ModItems.initialize();
 
