@@ -1,6 +1,5 @@
 package llevc.peak;
 
-import llevc.peak.blocks.CarrierBlock;
 import llevc.peak.forging.ForgingTableBlock;
 import net.minecraft.block.*;
 import net.minecraft.block.enums.NoteBlockInstrument;
@@ -18,22 +17,13 @@ import java.util.function.Function;
 
 public class ModBlocks {
     private static Block register(String name, Function<AbstractBlock.Settings, Block> blockFactory, AbstractBlock.Settings settings, boolean shouldRegisterItem) {
-        // Create a registry key for the block
         RegistryKey<Block> blockKey = keyOfBlock(name);
-        // Create the block instance
         Block block = blockFactory.apply(settings.registryKey(blockKey));
-
-        // Sometimes, you may not want to register an item for the block.
-        // Eg: if it's a technical block like `minecraft:moving_piston` or `minecraft:end_gateway`
         if (shouldRegisterItem) {
-            // Items need to be registered with a different type of registry key, but the ID
-            // can be the same.
             RegistryKey<Item> itemKey = keyOfItem(name);
-
             BlockItem blockItem = new BlockItem(block, new Item.Settings().registryKey(itemKey).useBlockPrefixedTranslationKey());
             Registry.register(Registries.ITEM, itemKey, blockItem);
         }
-
         return Registry.register(Registries.BLOCK, blockKey, block);
     }
 
@@ -68,30 +58,19 @@ public class ModBlocks {
             true
     );
 
-    public static final Block ReinforcedAnvil = register(
-            "reinforced_anvil",
-            AnvilBlock::new,
+    public static final Block Carrier = register(
+            "carrier",
+            Block::new,
             AbstractBlock.Settings.create()
-                    .mapColor(MapColor.IRON_GRAY)
-                    .requiresTool()
-                    .strength(5.0F, 1200.0F)
-                    .sounds(BlockSoundGroup.ANVIL)
-                    .pistonBehavior(PistonBehavior.BLOCK),
+                    .mapColor(MapColor.DARK_GREEN)
+                    .breakInstantly()
+                    .noCollision()
+                    .sounds(BlockSoundGroup.SPORE_BLOSSOM)
+                    .pistonBehavior(PistonBehavior.DESTROY),
             true
     );
 
-    public static final Block DiamondAnvil = register(
-            "diamond_anvil",
-            AnvilBlock::new,
-            AbstractBlock.Settings.create()
-                    .mapColor(MapColor.IRON_GRAY)
-                    .requiresTool()
-                    .strength(5.0F, 1200.0F)
-                    .sounds(BlockSoundGroup.ANVIL)
-                    .pistonBehavior(PistonBehavior.BLOCK),
-            true
-    );
-
+    //anvils
     public static final Block LightAnvil = register(
             "light_anvil",
             AnvilBlock::new,
@@ -103,16 +82,26 @@ public class ModBlocks {
                     .pistonBehavior(PistonBehavior.NORMAL),
             true
     );
-
-    public static final Block Carrier = register(
-            "carrier",
-            Block::new,
+    public static final Block ReinforcedAnvil = register(
+            "reinforced_anvil",
+            AnvilBlock::new,
             AbstractBlock.Settings.create()
-                    .mapColor(MapColor.DARK_GREEN)
-                    .breakInstantly()
-                    .noCollision()
-                    .sounds(BlockSoundGroup.SPORE_BLOSSOM)
-                    .pistonBehavior(PistonBehavior.DESTROY),
+                    .mapColor(MapColor.IRON_GRAY)
+                    .requiresTool()
+                    .strength(5.0F, 1200.0F)
+                    .sounds(BlockSoundGroup.ANVIL)
+                    .pistonBehavior(PistonBehavior.BLOCK),
+            true
+    );
+    public static final Block NetheriteAnvil = register(
+            "netherite_anvil",
+            AnvilBlock::new,
+            AbstractBlock.Settings.create()
+                    .mapColor(MapColor.IRON_GRAY)
+                    .requiresTool()
+                    .strength(5.0F, 1200.0F)
+                    .sounds(BlockSoundGroup.ANVIL)
+                    .pistonBehavior(PistonBehavior.BLOCK),
             true
     );
 }

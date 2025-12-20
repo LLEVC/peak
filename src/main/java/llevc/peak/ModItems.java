@@ -53,7 +53,7 @@ public class ModItems {
             itemGroup.add(ModBlocks.ForgingTable.asItem());
             itemGroup.add(ModBlocks.LightAnvil.asItem());
             itemGroup.add(ModBlocks.ReinforcedAnvil.asItem());
-            itemGroup.add(ModBlocks.DiamondAnvil.asItem());
+            itemGroup.add(ModBlocks.NetheriteAnvil.asItem());
             itemGroup.add(Pride);
         });
     }
