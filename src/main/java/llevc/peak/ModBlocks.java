@@ -1,5 +1,6 @@
 package llevc.peak;
 
+import llevc.peak.blocks.CarrierBlock;
 import llevc.peak.forging.ForgingTableBlock;
 import net.minecraft.block.*;
 import net.minecraft.block.enums.NoteBlockInstrument;
@@ -60,7 +61,7 @@ public class ModBlocks {
 
     public static final Block Carrier = register(
             "carrier",
-            Block::new,
+            CarrierBlock::new,
             AbstractBlock.Settings.create()
                     .mapColor(MapColor.DARK_GREEN)
                     .breakInstantly()

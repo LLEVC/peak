@@ -54,6 +54,7 @@ public class ModItems {
             itemGroup.add(ModBlocks.LightAnvil.asItem());
             itemGroup.add(ModBlocks.ReinforcedAnvil.asItem());
             itemGroup.add(ModBlocks.NetheriteAnvil.asItem());
+            itemGroup.add(ModBlocks.Carrier.asItem());
             itemGroup.add(Pride);
         });
     }
