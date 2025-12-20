@@ -1,6 +1,6 @@
 {
   "model": {
     "type": "minecraft:model",
-    "model": "peak:block/diamond_anvil"
+    "model": "peak:block/netherite_anvil"
   }
 }
