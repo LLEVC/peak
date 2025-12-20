@@ -1,5 +1,6 @@
 package llevc.peak;
 
+import llevc.peak.blocks.CarrierBlock;
 import llevc.peak.forging.ForgingTableBlock;
 import net.minecraft.block.*;
 import net.minecraft.block.enums.NoteBlockInstrument;
@@ -100,6 +101,18 @@ public class ModBlocks {
                     .strength(1.25f, 300f)
                     .sounds(BlockSoundGroup.ANVIL)
                     .pistonBehavior(PistonBehavior.NORMAL),
+            true
+    );
+
+    public static final Block Carrier = register(
+            "carrier",
+            Block::new,
+            AbstractBlock.Settings.create()
+                    .mapColor(MapColor.DARK_GREEN)
+                    .breakInstantly()
+                    .noCollision()
+                    .sounds(BlockSoundGroup.SPORE_BLOSSOM)
+                    .pistonBehavior(PistonBehavior.DESTROY),
             true
     );
 }

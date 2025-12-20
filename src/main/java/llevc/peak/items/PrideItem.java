@@ -1,0 +1,46 @@
+package llevc.peak.items;
+
+import llevc.peak.ThePeakExpansion;
+import net.minecraft.entity.Entity;
+import net.minecraft.entity.LivingEntity;
+import net.minecraft.entity.effect.StatusEffectInstance;
+import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.item.Item;
+import net.minecraft.util.ActionResult;
+import net.minecraft.util.Hand;
+import net.minecraft.util.math.Box;
+import net.minecraft.util.math.Vec3d;
+import net.minecraft.world.World;
+
+import java.util.Iterator;
+import java.util.Objects;
+
+public class PrideItem extends Item {
+    public PrideItem(Settings settings) {
+        super(settings);
+    }
+
+    @Override
+    public ActionResult use(World world, PlayerEntity user, Hand hand) {
+        if (world.isClient()) {
+            return ActionResult.PASS;
+        }
+        //absorb potions
+        user.getItemCooldownManager().set(user.getStackInHand(hand),20 * 2);
+        int radius = 25;
+        Box die = Box.of(user.getBlockPos().toCenterPos(),radius*2,radius*2,radius*2);
+        for (Entity entity : world.getOtherEntities(user.getEntity(), die)) {
+            LivingEntity sup = entity.getEntity();
+            if (sup != null) {
+                //ThePeakExpansion.LOGGER.info(sup.getName().getString());
+                if (!sup.getActiveStatusEffects().isEmpty()) {
+                    for (StatusEffectInstance hup : sup.getActiveStatusEffects().values()) {
+                        user.addStatusEffect(hup);
+                    }
+                    sup.clearStatusEffects();
+                }
+            }
+        }
+        return ActionResult.SUCCESS;
+    }
+}

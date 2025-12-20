@@ -2,6 +2,7 @@ package llevc.peak;
 
 import com.mojang.serialization.Codec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
+import net.fabricmc.fabric.api.item.v1.ComponentTooltipAppenderRegistry;
 import net.minecraft.component.ComponentType;
 import net.minecraft.item.ItemStack;
 import net.minecraft.registry.Registries;

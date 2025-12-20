@@ -1,14 +1,10 @@
 package llevc.peak.forging;
 
 import com.mojang.serialization.MapCodec;
-import com.sun.jna.platform.unix.X11;
-import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.CraftingTableBlock;
-import net.minecraft.block.SmithingTableBlock;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.screen.*;
-import net.minecraft.stat.Stats;
 import net.minecraft.text.Text;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.hit.BlockHitResult;

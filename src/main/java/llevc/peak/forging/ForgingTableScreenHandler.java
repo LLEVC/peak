@@ -150,13 +150,13 @@ public class ForgingTableScreenHandler extends CraftingScreenHandler {
             if (sword) {
                 itemStack2 = ModItems.ModularSwordItem.getDefaultStack();
             } else if (pickaxe) {
-                itemStack2 = ModItems.ModularSwordItem.getDefaultStack();
+                itemStack2 = ModItems.ModularPickaxeItem.getDefaultStack();
             }  else if (axe) {
-                itemStack2 = ModItems.ModularSwordItem.getDefaultStack();
+                itemStack2 = ModItems.ModularAxeItem.getDefaultStack();
             } else if (shovel) {
-                itemStack2 = ModItems.ModularSwordItem.getDefaultStack();
+                itemStack2 = ModItems.ModularShovelItem.getDefaultStack();
             } else if (hoe) {
-                itemStack2 = ModItems.ModularSwordItem.getDefaultStack();
+                itemStack2 = ModItems.ModularHoeItem.getDefaultStack();
             }
             itemStack = itemStack2;
         }

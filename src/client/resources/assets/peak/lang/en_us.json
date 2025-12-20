@@ -5,5 +5,10 @@
   "itemGroup.peak": "The Peak Expansion",
   "container.peak.forge": "Forging",
   "item.peak.studded": "Studded",
-  "item.peak.anvil_cap": "Anvil Power:"
+  "item.peak.anvil_cap": "Anvil Power:",
+  "effect.peak.milk": "Milk",
+  "item.minecraft.potion.effect.milk": "Milk Bottle",
+  "item.minecraft.splash_potion.effect.milk": "Splash Milk Bottle",
+  "item.minecraft.lingering_potion.effect.milk": "Lingering Milk Bottle",
+  "item.minecraft.tipped_arrow.effect.milk": "Arrow of Milking"
 }
