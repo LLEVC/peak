@@ -1,4 +1,4 @@
-package llevc.peak.forging;
+package llevc.peak.blocks;
 
 import llevc.peak.ModBlocks;
 import llevc.peak.ModComponents;
@@ -15,11 +15,14 @@ import net.minecraft.network.packet.s2c.play.ScreenHandlerSlotUpdateS2CPacket;
 import net.minecraft.recipe.CraftingRecipe;
 import net.minecraft.recipe.RecipeEntry;
 import net.minecraft.recipe.input.CraftingRecipeInput;
+import net.minecraft.registry.RegistryKeys;
+import net.minecraft.registry.tag.TagKey;
 import net.minecraft.screen.CraftingScreenHandler;
 import net.minecraft.screen.ScreenHandler;
 import net.minecraft.screen.ScreenHandlerContext;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.server.world.ServerWorld;
+import net.minecraft.util.Identifier;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.Arrays;
@@ -100,10 +103,7 @@ public class ForgingTableScreenHandler extends CraftingScreenHandler {
         boolean hoe = false;
         boolean valid = false;
 
-        List<Item> materials = List.of(Items.IRON_INGOT,Items.GOLD_INGOT,Items.DIAMOND,Items.EMERALD);
-        List<Item> rods = List.of(Items.STICK);
-
-        if (materials.contains(material) && rods.contains(rod)) {
+        if (material.getDefaultStack().isIn(TagKey.of(RegistryKeys.ITEM,Identifier.of("forging/materials"))) && rod.getDefaultStack().isIn(TagKey.of(RegistryKeys.ITEM,Identifier.of("forging/rods")))) {
             int j = 1;
             while (yes.hasNext()) {
                 List<Item> pattern = yes.next();

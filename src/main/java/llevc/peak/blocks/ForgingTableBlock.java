@@ -1,4 +1,4 @@
-package llevc.peak.forging;
+package llevc.peak.blocks;
 
 import com.mojang.serialization.MapCodec;
 import net.minecraft.block.BlockState;

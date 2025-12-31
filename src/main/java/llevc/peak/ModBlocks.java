@@ -1,7 +1,7 @@
 package llevc.peak;
 
 import llevc.peak.blocks.CarrierBlock;
-import llevc.peak.forging.ForgingTableBlock;
+import llevc.peak.blocks.ForgingTableBlock;
 import net.minecraft.block.*;
 import net.minecraft.block.enums.NoteBlockInstrument;
 import net.minecraft.block.piston.PistonBehavior;

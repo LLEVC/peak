@@ -1,6 +1,6 @@
 package llevc.peak;
 
-import llevc.peak.forging.weaponTypes.ModularItem;
+import llevc.peak.items.ModularItem;
 import llevc.peak.items.PrideItem;
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
@@ -88,7 +88,7 @@ public class ModItems {
                             )
                             .build()
                     )
-                    .maxDamage(1000)
+                    .maxDamage(100)
                     .component(DataComponentTypes.UNBREAKABLE, Unit.INSTANCE)
     );
 
