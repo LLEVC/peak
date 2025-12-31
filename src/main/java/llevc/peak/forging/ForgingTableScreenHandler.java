@@ -1,6 +1,7 @@
 package llevc.peak.forging;
 
 import llevc.peak.ModBlocks;
+import llevc.peak.ModComponents;
 import llevc.peak.ModItems;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.PlayerInventory;
@@ -158,6 +159,7 @@ public class ForgingTableScreenHandler extends CraftingScreenHandler {
             } else if (hoe) {
                 itemStack2 = ModItems.ModularHoeItem.getDefaultStack();
             }
+            itemStack2.set(ModComponents.ModularComponent.ModularComponentType,new ModComponents.ModularComponent.Modular(material.asItem().getName().getString(),rod.asItem().getName().getString()));
             itemStack = itemStack2;
         }
 

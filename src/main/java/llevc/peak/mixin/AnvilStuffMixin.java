@@ -69,11 +69,13 @@ public abstract class AnvilStuffMixin extends ForgingScreenHandler {
 		this.context.run((world,pos) -> {
 			BlockState blockState = world.getBlockState(pos);
 			if (blockState.isIn(TagKey.of(RegistryKeys.BLOCK,Identifier.of("peak","anvil/tier0")))) {
-				value[0] = 20;
+				value[0] = 24;
 			} else if (blockState.isIn(TagKey.of(RegistryKeys.BLOCK,Identifier.of("peak","anvil/tier1")))) {
-				value[0] = 40;
+				value[0] = 48;
 			} else if (blockState.isIn(TagKey.of(RegistryKeys.BLOCK,Identifier.of("peak","anvil/tier2")))) {
-				value[0] = 60;
+				value[0] = 64;
+			} else if (blockState.isIn(TagKey.of(RegistryKeys.BLOCK,Identifier.of("peak","anvil/tier3")))) {
+				value[0] = 256;
 			}
 		});
 

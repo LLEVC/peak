@@ -1,16 +1,15 @@
 package llevc.peak;
 
-import llevc.peak.forging.weaponTypes.ModularSword;
+import llevc.peak.forging.weaponTypes.ModularItem;
 import llevc.peak.items.PrideItem;
-import llevc.peak.statusEffects.MilkedUp;
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.minecraft.component.DataComponentTypes;
-import net.minecraft.component.type.BannerPatternsComponent;
-import net.minecraft.component.type.BlocksAttacksComponent;
-import net.minecraft.entity.EquipmentSlot;
+import net.minecraft.component.type.AttributeModifierSlot;
+import net.minecraft.component.type.AttributeModifiersComponent;
+import net.minecraft.entity.attribute.EntityAttributeModifier;
+import net.minecraft.entity.attribute.EntityAttributes;
 import net.minecraft.entity.effect.StatusEffectInstance;
-import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.item.*;
 import net.minecraft.potion.Potion;
 import net.minecraft.registry.Registries;
@@ -18,14 +17,10 @@ import net.minecraft.registry.Registry;
 import net.minecraft.registry.RegistryKey;
 import net.minecraft.registry.RegistryKeys;
 import net.minecraft.registry.entry.RegistryEntry;
-import net.minecraft.registry.tag.DamageTypeTags;
-import net.minecraft.registry.tag.ItemTags;
-import net.minecraft.sound.SoundEvents;
 import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
+import net.minecraft.util.Unit;
 
-import java.util.List;
-import java.util.Optional;
 import java.util.function.Function;
 
 public class ModItems {
@@ -74,49 +69,54 @@ public class ModItems {
                     new StatusEffectInstance(ModEffects.MilkedUp,1,0)
             )
     );
-    public static final RegistryEntry.Reference<Potion> freak = Registry.registerReference(
-            Registries.POTION,
-            Identifier.of(ThePeakExpansion.MOD_ID,"freak"),
-            new Potion(
-                    "freak",
-                    new StatusEffectInstance(StatusEffects.INSTANT_HEALTH,1,125)
-            )
-    );
-
-    //Heavy Material
 
     //sins
     public static final Item Pride = register(
             "pride",
             PrideItem::new,
-            new Item.Settings().sword(ToolMaterial.NETHERITE,6f,-2.4f)
+            new Item.Settings()
+                    .attributeModifiers(AttributeModifiersComponent.builder()
+                            .add(
+                                    EntityAttributes.ATTACK_DAMAGE,
+                                    new EntityAttributeModifier(Identifier.ofVanilla("base_attack_damage"), 11.0, EntityAttributeModifier.Operation.ADD_VALUE),
+                                    AttributeModifierSlot.MAINHAND
+                            )
+                            .add(
+                                    EntityAttributes.ATTACK_SPEED,
+                                    new EntityAttributeModifier(Identifier.ofVanilla("base_attack_speed"), -3.0F, EntityAttributeModifier.Operation.ADD_VALUE),
+                                    AttributeModifierSlot.MAINHAND
+                            )
+                            .build()
+                    )
+                    .maxDamage(1000)
+                    .component(DataComponentTypes.UNBREAKABLE, Unit.INSTANCE)
     );
 
     //template
     //lowk might scrap
     public static final Item ModularSwordItem = register(
             "modular_sword",
-            ModularSword::new,
+            ModularItem::new,
             new Item.Settings().sword(ToolMaterial.WOOD,3f,-2.4f)
     );
     public static final Item ModularPickaxeItem = register(
             "modular_pickaxe",
-            ModularSword::new,
+            ModularItem::new,
             new Item.Settings().sword(ToolMaterial.WOOD,3f,-2.4f)
     );
     public static final Item ModularAxeItem = register(
             "modular_axe",
-            ModularSword::new,
+            ModularItem::new,
             new Item.Settings().sword(ToolMaterial.WOOD,3f,-2.4f)
     );
     public static final Item ModularShovelItem = register(
             "modular_shovel",
-            ModularSword::new,
+            ModularItem::new,
             new Item.Settings().sword(ToolMaterial.WOOD,3f,-2.4f)
     );
     public static final Item ModularHoeItem = register(
             "modular_hoe",
-            ModularSword::new,
+            ModularItem::new,
             new Item.Settings().sword(ToolMaterial.WOOD,3f,-2.4f)
     );
 

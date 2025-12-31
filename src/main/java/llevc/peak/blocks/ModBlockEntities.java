@@ -22,4 +22,7 @@ public class ModBlockEntities<T extends BlockEntity> implements FabricBlockEntit
         Identifier id = Identifier.of(ThePeakExpansion.MOD_ID, name);
         return Registry.register(Registries.BLOCK_ENTITY_TYPE, id, FabricBlockEntityTypeBuilder.<T>create(entityFactory, blocks).build());
     }
+
+    public static void initialize() {
+    }
 }

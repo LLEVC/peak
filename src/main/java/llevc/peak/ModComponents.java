@@ -23,11 +23,11 @@ public class ModComponents {
     );
 
     public static class ModularComponent {
-        public record Modular(String head, String base) {
+        public record Modular(String material, String rod) {
             public static final Codec<Modular> CODEC = RecordCodecBuilder.create(builder -> {
                 return builder.group(
-                        Codec.STRING.optionalFieldOf("head","wood").forGetter(Modular::head),
-                        Codec.STRING.optionalFieldOf("base","wood").forGetter(Modular::base)
+                        Codec.STRING.optionalFieldOf("material","wood").forGetter(Modular::material),
+                        Codec.STRING.optionalFieldOf("rod","wood").forGetter(Modular::rod)
                 ).apply(builder, Modular::new);
             });
         }

@@ -1,5 +1,6 @@
 package llevc.peak;
 
+import llevc.peak.blocks.ModBlockEntities;
 import net.fabricmc.api.ModInitializer;
 
 import org.slf4j.Logger;
@@ -13,6 +14,7 @@ public class ThePeakExpansion implements ModInitializer {
 	public void onInitialize() {
 		ModComponents.initialize();
 		ModBlocks.initialize();
+		ModBlockEntities.initialize();
 		ModItems.initialize();
 
 		LOGGER.info("epstein didnt kill himself :)");
