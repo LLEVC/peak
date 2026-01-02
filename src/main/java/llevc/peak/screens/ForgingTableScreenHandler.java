@@ -1,4 +1,4 @@
-package llevc.peak.blocks;
+package llevc.peak.screens;
 
 import llevc.peak.ModBlocks;
 import llevc.peak.ModComponents;
@@ -103,7 +103,7 @@ public class ForgingTableScreenHandler extends CraftingScreenHandler {
         boolean hoe = false;
         boolean valid = false;
 
-        if (material.getDefaultStack().isIn(TagKey.of(RegistryKeys.ITEM,Identifier.of("forging/materials"))) && rod.getDefaultStack().isIn(TagKey.of(RegistryKeys.ITEM,Identifier.of("forging/rods")))) {
+        if (material.getDefaultStack().isIn(TagKey.of(RegistryKeys.ITEM,Identifier.of("peak","forging/materials"))) && rod.getDefaultStack().isIn(TagKey.of(RegistryKeys.ITEM,Identifier.of("peak","forging/rods")))) {
             int j = 1;
             while (yes.hasNext()) {
                 List<Item> pattern = yes.next();
@@ -159,7 +159,10 @@ public class ForgingTableScreenHandler extends CraftingScreenHandler {
             } else if (hoe) {
                 itemStack2 = ModItems.ModularHoeItem.getDefaultStack();
             }
-            itemStack2.set(ModComponents.ModularComponent.ModularComponentType,new ModComponents.ModularComponent.Modular(material.asItem().getName().getString(),rod.asItem().getName().getString()));
+
+            assert itemStack2 != null;
+            itemStack2.set(ModComponents.ModularComponent.ModularComponentType,new ModComponents.ModularComponent.Modular(material.toString(),rod.toString()));
+            itemStack2.onCraftByPlayer(player,1);
             itemStack = itemStack2;
         }
 

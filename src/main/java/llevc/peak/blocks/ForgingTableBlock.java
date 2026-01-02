@@ -1,6 +1,7 @@
 package llevc.peak.blocks;
 
 import com.mojang.serialization.MapCodec;
+import llevc.peak.screens.ForgingTableScreenHandler;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.CraftingTableBlock;
 import net.minecraft.entity.player.PlayerEntity;

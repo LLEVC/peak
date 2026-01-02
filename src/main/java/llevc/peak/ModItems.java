@@ -1,7 +1,11 @@
 package llevc.peak;
 
-import llevc.peak.items.ModularItem;
+import llevc.peak.items.ModularSword;
 import llevc.peak.items.PrideItem;
+import llevc.peak.items.modular.ModularAxe;
+import llevc.peak.items.modular.ModularHoe;
+import llevc.peak.items.modular.ModularPickaxe;
+import llevc.peak.items.modular.ModularShovel;
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.minecraft.component.DataComponentTypes;
@@ -96,28 +100,28 @@ public class ModItems {
     //lowk might scrap
     public static final Item ModularSwordItem = register(
             "modular_sword",
-            ModularItem::new,
-            new Item.Settings().sword(ToolMaterial.WOOD,3f,-2.4f)
+            ModularSword::new,
+            new Item.Settings().maxCount(1)
     );
     public static final Item ModularPickaxeItem = register(
             "modular_pickaxe",
-            ModularItem::new,
-            new Item.Settings().sword(ToolMaterial.WOOD,3f,-2.4f)
+            ModularPickaxe::new,
+            new Item.Settings().maxCount(1)
     );
     public static final Item ModularAxeItem = register(
             "modular_axe",
-            ModularItem::new,
-            new Item.Settings().sword(ToolMaterial.WOOD,3f,-2.4f)
+            ModularAxe::new,
+            new Item.Settings().maxCount(1)
     );
     public static final Item ModularShovelItem = register(
             "modular_shovel",
-            ModularItem::new,
-            new Item.Settings().sword(ToolMaterial.WOOD,3f,-2.4f)
+            ModularShovel::new,
+            new Item.Settings().maxCount(1)
     );
     public static final Item ModularHoeItem = register(
             "modular_hoe",
-            ModularItem::new,
-            new Item.Settings().sword(ToolMaterial.WOOD,3f,-2.4f)
+            ModularHoe::new,
+            new Item.Settings().maxCount(1)
     );
 
     //the item group lol

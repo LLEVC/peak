@@ -1,8 +1,10 @@
 package llevc.peak;
 
-import com.mojang.serialization.Codec;
+import com.mojang.serialization.*;
+import com.mojang.serialization.codecs.PrimitiveCodec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
 import net.minecraft.component.ComponentType;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
@@ -26,8 +28,8 @@ public class ModComponents {
         public record Modular(String material, String rod) {
             public static final Codec<Modular> CODEC = RecordCodecBuilder.create(builder -> {
                 return builder.group(
-                        Codec.STRING.optionalFieldOf("material","wood").forGetter(Modular::material),
-                        Codec.STRING.optionalFieldOf("rod","wood").forGetter(Modular::rod)
+                        Codec.STRING.optionalFieldOf("material","diamond").forGetter(Modular::material),
+                        Codec.STRING.optionalFieldOf("rod","stick").forGetter(Modular::rod)
                 ).apply(builder, Modular::new);
             });
         }
