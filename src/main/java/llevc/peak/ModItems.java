@@ -25,6 +25,7 @@ import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.Unit;
 
+import javax.xml.crypto.Data;
 import java.util.function.Function;
 
 public class ModItems {
@@ -92,8 +93,7 @@ public class ModItems {
                             )
                             .build()
                     )
-                    .maxDamage(100)
-                    .component(DataComponentTypes.UNBREAKABLE, Unit.INSTANCE)
+                    .maxDamage(100).component(DataComponentTypes.DAMAGE,100)
     );
 
     //template

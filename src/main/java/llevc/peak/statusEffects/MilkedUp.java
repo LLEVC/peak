@@ -4,6 +4,7 @@ import net.minecraft.entity.Entity;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.effect.InstantStatusEffect;
 import net.minecraft.entity.effect.StatusEffectCategory;
+import net.minecraft.item.consume.ClearAllEffectsConsumeEffect;
 import net.minecraft.server.world.ServerWorld;
 import org.jetbrains.annotations.Nullable;
 

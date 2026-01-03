@@ -5,6 +5,7 @@
   "mixins": [
     "AnvilStuffMixin",
     "AnvilTooltipMixin",
+    "FireworkMixin",
     "MilkMixin",
     "StuddedTooltipMixin"
   ],
